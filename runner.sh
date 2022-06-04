@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo i am updated
+
 BRANCH="feature/custom_branch"
 PID=""
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BRANCH="main"
+BRANCH="feature/runner_sh_gitsafe"
 PID=""
 
 RED="\033[1;31m"

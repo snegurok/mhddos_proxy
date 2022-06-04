@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BRANCH="feature/runner_sh_gitsafe"
+BRANCH="feature/custom_branch"
 PID=""
 
 RED="\033[1;31m"

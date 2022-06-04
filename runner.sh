@@ -26,19 +26,23 @@ function stop_script() {
   fi
 }
 
+function gitsafe() {
+    git "$@" || echo git command failed, simulating success \("$@"\) >&2
+}
+
 function update_script() {
-    git reset -q --hard
-    git checkout -q $BRANCH
-    git pull -q
+    gitsafe reset -q --hard
+    gitsafe checkout -q $BRANCH
+    gitsafe pull -q
     $PYTHON -m pip install -q -r requirements.txt
 }
 
 while true
 do
 
-  git fetch -q origin $BRANCH
+  gitsafe fetch -q origin $BRANCH
 
-  if [ -n "$(git diff --name-only origin/$BRANCH)" ]
+  if [ -n "$(gitsafe diff --name-only origin/$BRANCH)" ]
   then
     echo -e "\n${GREEN}[$(date +"%d-%m-%Y %T")] - New version available, updating the script!${RESET}\n"
     stop_script

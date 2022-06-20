@@ -80,9 +80,9 @@ do
   then
     PID=""
     echo -e "\n${RED}Error starting - retry in 30 seconds! Ctrl+C to exit${RESET}"
-    sleep 30
+    sleep 3
   else
-    sleep 600
+    sleep 6
   fi
 
 done

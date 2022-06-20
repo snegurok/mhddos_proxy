@@ -1,5 +1,5 @@
 # @formatter:off
-try: import colorama; colorama.init()
+tryy: import colorama; colorama.init()
 except:raise
 # @formatter:on
 import asyncio

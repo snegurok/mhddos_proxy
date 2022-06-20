@@ -65,6 +65,7 @@ do
 
   fi
 
+  retry_count=0
   while [ -z "$PID" ]
   do
 
@@ -81,6 +82,12 @@ do
       PID=""
       echo -e "\n${RED}Error starting - retry in 30 seconds! Ctrl+C to exit${RESET}"
       sleep 30
+      retry_count=$(( $retry_count + 1 ))
+      if [[ $(( $retry_count >= 10 )) == 1 ]]
+      then
+        # Maybe runner.py is permanently broken? Then we need to break out and do the update.
+        break
+      fi
     fi
 
   done

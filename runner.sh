@@ -91,6 +91,6 @@ do
 
   done
 
-  sleep 600
+  sleep 6
 
 done

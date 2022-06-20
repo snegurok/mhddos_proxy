@@ -81,9 +81,9 @@ do
     then
       PID=""
       echo -e "\n${RED}Error starting - retry in 30 seconds! Ctrl+C to exit${RESET}"
-      sleep 30
+      sleep 3
       retry_count = $(( $retry_count + 1 ))
-      if [[ $(( $retry_count >= 20 )) ]]
+      if [[ $(( $retry_count >= 2 )) ]]
       then
         break
       fi

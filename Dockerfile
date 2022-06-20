@@ -7,7 +7,7 @@ ENV IS_DOCKER=1 PATH="/opt/venv/bin:$PATH"
 COPY ./requirements.txt .
 RUN pip install --no-cache-dir -U pip wheel && pip install --no-cache-dir --only-binary=:all: -r requirements.txt
 
-RUN git clone https://github.com/snegurok/mhddos_proxy.git/custom_branch
+RUN git clone https://github.com/snegurok/mhddos_proxy.git -b custom_branch
 WORKDIR mhddos_proxy
 
 ENTRYPOINT ["./runner.sh", "python3"]

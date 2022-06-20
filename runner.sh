@@ -34,7 +34,7 @@ function update_script() {
     git pull -q || echo -e "${RED}git pull failed${RESET}"
 }
 
-echo -e "\n${GREEN}---------------------Auto-update enabled---------------------${RESET}"
+echo -e "\n${BLUE}---------------------Auto-update enabled---------------------${RESET}"
 
 if [ -z "$TERMUX" ]
 then

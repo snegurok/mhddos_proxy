@@ -65,7 +65,7 @@ do
 
   fi
 
-  retry_count = 0
+  retry_count=0
   while [ -z "$PID" ]
   do
 
@@ -82,7 +82,7 @@ do
       PID=""
       echo -e "\n${RED}Error starting - retry in 30 seconds! Ctrl+C to exit${RESET}"
       sleep 3
-      retry_count = $(( $retry_count + 1 ))
+      retry_count=$(( $retry_count + 1 ))
       if [[ $(( $retry_count >= 2 )) ]]
       then
         break
